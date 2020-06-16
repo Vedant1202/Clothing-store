@@ -6,7 +6,7 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
-    "prettier": "^2.0.5",
+    "node-sass": "^4.14.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1"
@@ -16,8 +16,11 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "prettier": "prettier --check **/*.js",
-    "prettier:fix": "prettier --write **/*.js"
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "prettier": "prettier --check **/*.js, **/*.jsx",
+    "prettier:fix": "prettier --write **/*.js, **/*.jsx",
+    "prettier:fixCss": "prettier --write **/*.scss, **/*.css"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -33,5 +36,22 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "2.x",
+    "@typescript-eslint/parser": "2.x",
+    "babel-eslint": "10.x",
+    "eslint": "6.x",
+    "eslint-config-airbnb": "^17.0.0",
+    "eslint-config-equimper": "*",
+    "eslint-config-prettier": "^3.1.0",
+    "eslint-config-react-app": "^5.2.1",
+    "eslint-plugin-flowtype": "4.x",
+    "eslint-plugin-import": "2.x",
+    "eslint-plugin-jsx-a11y": "6.x",
+    "eslint-plugin-prettier": "^3.0.0",
+    "eslint-plugin-react": "7.x",
+    "eslint-plugin-react-hooks": "2.x",
+    "prettier": "^1.14.3"
   }
 }
