@@ -1,3 +1,5 @@
+/** @format */
+
 import React from 'react';
 
 import './directory.styles.scss';
@@ -9,54 +11,57 @@ class Directory extends React.Component {
         super();
 
         this.state = {
-            sections: [{
+            sections: [
+                {
                     title: 'hats',
-                    imageUrl: 'https://i.ibb.co/cvpntL1/hats.png',
+                    imageUrl:
+                        'https://images.unsplash.com/photo-1533827432537-70133748f5c8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80',
                     id: 1,
-                    linkUrl: 'shop/hats'
+                    linkUrl: 'shop/hats',
                 },
                 {
                     title: 'jackets',
-                    imageUrl: 'https://i.ibb.co/px2tCc3/jackets.png',
+                    imageUrl:
+                        'https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80',
                     id: 2,
-                    linkUrl: 'shop/jackets'
+                    linkUrl: 'shop/jackets',
                 },
                 {
                     title: 'sneakers',
-                    imageUrl: 'https://i.ibb.co/0jqHpnp/sneakers.png',
+                    imageUrl:
+                        'https://images.unsplash.com/photo-1554192833-605c183c9f45?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80',
                     id: 3,
-                    linkUrl: 'shop/sneakers'
+                    linkUrl: 'shop/sneakers',
                 },
                 {
                     title: 'womens',
-                    imageUrl: 'https://i.ibb.co/GCCdy8t/womens.png',
+                    imageUrl:
+                        'https://images.unsplash.com/photo-1500917293891-ef795e70e1f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80',
                     size: 'large',
                     id: 4,
-                    linkUrl: 'shop/womens'
+                    linkUrl: 'shop/womens',
                 },
                 {
                     title: 'mens',
-                    imageUrl: 'https://i.ibb.co/R70vBrQ/men.png',
+                    imageUrl:
+                        'https://images.unsplash.com/flagged/photo-1574875874606-e207ebb0e691?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80',
                     size: 'large',
                     id: 5,
-                    linkUrl: 'shop/mens'
-                }
-            ]
-        }
+                    linkUrl: 'shop/mens',
+                },
+            ],
+        };
     }
 
     render() {
         return (
-            <div className="directory-menu">
-                {
-                    this.state.sections.map(({ title, imageUrl, id, size }) => (
-                        <MenuItem key={id} title={title} imageUrl={imageUrl} size={size}></MenuItem>
-                    ))
-                }
+            <div className='directory-menu'>
+                {this.state.sections.map(({ id, ...otherComponentProps }) => (
+                    <MenuItem key={id} {...otherComponentProps}></MenuItem>
+                ))}
             </div>
-        )
+        );
     }
-
 }
 
 export default Directory;
