@@ -10,7 +10,6 @@
     overflow: hidden;
 
     &:hover {
-        cursor: pointer;
 
         .background-image {
             transform: scale(1.1);
@@ -19,6 +18,10 @@
 
         .content {
             opacity: 0.9;
+
+            &:hover {
+                cursor: pointer;
+            }
         }
     }
 

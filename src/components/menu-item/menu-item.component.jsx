@@ -18,7 +18,7 @@ class MenuItem extends Component {
                 <button
                     className='content'
                     onClick={() => {
-                        this.props.history.push(`${this.props.match.urlBasic}${this.props.linkUrl}`);
+                        this.props.history.push(`${this.props.match.url}${this.props.linkUrl}`);
                     }}
                 >
                     <h1 className='title'>{this.props.title}</h1>

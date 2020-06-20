@@ -6,5 +6,10 @@
     "javascript.updateImportsOnFileMove.enabled": "always",
     "cSpell.ignoreWords": [
       "womens"
+    ],
+    "cSpell.words": [
+      "errorpage",
+      "firestore",
+      "signin"
     ]
 }
