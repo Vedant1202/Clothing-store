@@ -22,10 +22,6 @@ class Signup extends React.Component {
         };
     }
 
-    handleRedirect = () => {
-        this.props.history.push('/');
-    };
-
     handleSubmit = async event => {
         event.preventDefault();
 
@@ -43,17 +39,12 @@ class Signup extends React.Component {
                 displayName,
             });
 
-            this.setState(
-                {
-                    displayName: '',
-                    email: '',
-                    password: '',
-                    confirmPassword: '',
-                },
-                () => {
-                    this.handleRedirect();
-                }
-            );
+            this.setState({
+                displayName: '',
+                email: '',
+                password: '',
+                confirmPassword: '',
+            });
         } catch (error) {
             console.error(error);
             alert(error.message);

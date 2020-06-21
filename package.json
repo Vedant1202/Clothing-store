@@ -24,7 +24,7 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "prettier": "prettier --check **/*.js, **/*.jsx",
-    "prettier:fix": "prettier --write **/*.js, **/*.jsx",
+    "prettier:fix": "prettier --write **/*.js, **/*.jsx *.js *.jsx src/*.js src/*.jsx public/*.js",
     "prettier:fixCss": "prettier --write **/*.scss, **/*.css"
   },
   "eslintConfig": {

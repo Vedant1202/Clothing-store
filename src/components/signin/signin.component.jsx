@@ -18,10 +18,6 @@ class Signin extends React.Component {
         };
     }
 
-    handleRedirect = () => {
-        this.props.history.push('/');
-    };
-
     handleSubmit = async event => {
         event.preventDefault();
 
@@ -29,9 +25,7 @@ class Signin extends React.Component {
 
         try {
             await auth.signInWithEmailAndPassword(email, password);
-            this.setState({ email: '', password: '' }, () => {
-                this.handleRedirect();
-            });
+            this.setState({ email: '', password: '' });
         } catch (error) {
             console.log('Error: ' + error.message);
             alert(error.message);
