@@ -1,6 +1,7 @@
 /** @format */
 
 import React from 'react';
+import { withRouter } from "react-router-dom";
 
 import './signin.styles.scss';
 import FormInput from '../form-input/form-input.component';
@@ -17,6 +18,10 @@ class Signin extends React.Component {
         };
     }
 
+    handleRedirect = () => {
+        this.props.history.push("/");
+    }
+
     handleSubmit = async event => {
         event.preventDefault();
 
@@ -24,9 +29,12 @@ class Signin extends React.Component {
 
         try {
             await auth.signInWithEmailAndPassword(email, password);
-            this.setState({ email: '', password: '' });
+            this.setState({ email: '', password: '' }, () => {
+              this.handleRedirect();
+            });
         } catch (error) {
             console.log('Error: ' + error.message);
+            alert(error.message);
             throw error;
         }
     };
@@ -37,10 +45,10 @@ class Signin extends React.Component {
         this.setState({ [name]: value });
     };
 
-    handleGoogleSignInClick = event => {
+    handleGoogleSignInClick = async event => {
         event.preventDefault();
 
-        signInWithGoogle();
+        await signInWithGoogle(this.handleRedirect);
     };
 
     render() {
@@ -79,4 +87,4 @@ class Signin extends React.Component {
     }
 }
 
-export default Signin;
+export default withRouter(Signin);

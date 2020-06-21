@@ -41,8 +41,12 @@
             font-size: large;
 
             &:hover {
-                cursor: grab;
+                cursor: default;
             }
         }
     }
+}
+
+.hidden {
+    display: none;
 }

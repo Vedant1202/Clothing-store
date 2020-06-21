@@ -13,16 +13,25 @@ const config = {
     measurementId: "G-BQVNGGS9XX"
 };
 
-export const createUserProfileDocument = async (user, additionalData) => {
-    if (!user) return false;
+export const createUserProfileDocument = async (userAuth, additionalData) => {
+    if (!userAuth) return;
 
-    const userRef = firestore.doc(`users/${user.uid}`);
+    const userRef = firestore.doc(`users/${userAuth.uid}`);
 
     const snapShot = await userRef.get();
 
     if (!snapShot.exists) {
-        const { displayName, email } = user;
+        const email = userAuth.email;
         const createdAt = new Date();
+        let displayName = '';
+
+        if (userAuth.displayName) {
+            displayName = userAuth.displayName;
+        } else if (additionalData && additionalData.displayName) {
+            displayName = additionalData.displayName
+        } else {
+            displayName = 'User';
+        }
 
         try {
             await userRef.set({
@@ -32,8 +41,7 @@ export const createUserProfileDocument = async (user, additionalData) => {
                 ...additionalData
             });
         } catch (error) {
-            console.log('Error: ' + error.message);
-            throw error;
+            console.log('error creating user', error.message);
         }
     }
 
@@ -46,10 +54,15 @@ export const auth = firebase.auth();
 export const firestore = firebase.firestore();
 
 const provider = new firebase.auth.GoogleAuthProvider();
-provider.setCustomParameters({ prompt: 'select_account' });
+provider.setCustomParameters({
+    prompt: 'select_account'
+});
 
-export const signInWithGoogle = () => {
-    auth.signInWithPopup(provider);
+export const signInWithGoogle = async (callback=false) => {
+    await auth.signInWithPopup(provider);
+    if (callback) {
+        callback();
+    }
 }
 
 export default firebase;

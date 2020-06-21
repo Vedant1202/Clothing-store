@@ -9,38 +9,65 @@ import './header.styles.scss';
 
 import { auth } from '../../firebase/firebase.utils';
 
-const Header = ({ currentUser }) => {
-    console.log(currentUser);
-    return (
-        <div className='header'>
-            <Link className='logo-container' to='/'>
-                <Logo className='logo'></Logo>
-            </Link>
-            <div className='options'>
-                {currentUser ? <div className='title-name'>Hello, {currentUser.displayName.split(' ')[0]}</div> : null}
-                <Link className='option' to='/shop'>
-                    Shop
+class Header extends React.Component {
+
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            reload: false,
+        }
+    }
+
+    onLogout() {
+        this.setState({
+            reload: true,
+        });
+    }
+
+    render() {
+        console.log('loaded');
+        console.log(this.props);
+        const { currentUser, currentUserAuth } = this.props;
+        return (
+            <div className='header'>
+                <Link className='logo-container' to='/'>
+                    <Logo className='logo'></Logo>
                 </Link>
-                <Link className='option' to='/contact'>
-                    Contact
-                </Link>
-                {currentUser ? (
-                    <div
-                        className='option'
-                        onClick={() => {
-                            auth.signOut();
-                        }}
-                    >
-                        Sign Out
-                    </div>
-                ) : (
-                    <Link className='option' to='/join'>
-                        Sign In
+                <div className='options'>
+                    {currentUserAuth && currentUser && currentUser.displayName ? (
+                        <div className='title-name'>Hello, {currentUser.displayName.split(' ')[0]}</div>
+                    ) : (
+                        <Link className='hidden' to='*'></Link>
+                    )}
+                    <Link className='option' to='/shop'>
+                        Shop
                     </Link>
-                )}
+                    <Link className='option' to='/contact'>
+                        Contact
+                    </Link>
+                    {currentUserAuth ? (
+                        <div
+                            className='option'
+                            onClick={() => {
+                                auth.signOut();
+                                this.onLogout();
+                                window.location.reload();
+                            }}
+                        >
+                            Sign Out
+                        </div>
+                    ) : (
+                        <Link className='option' to='/join'>
+                            Sign In
+                        </Link>
+                    )}
+                </div>
             </div>
-        </div>
-    );
+        );
+    }
+
+
 };
 
 export default Header;

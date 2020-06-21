@@ -1,6 +1,7 @@
 /** @format */
 
 import React from 'react';
+import { withRouter } from "react-router-dom";
 
 import { auth, createUserProfileDocument } from '../../firebase/firebase.utils';
 
@@ -21,27 +22,38 @@ class Signup extends React.Component {
         };
     }
 
+    handleRedirect = () => {
+        this.props.history.push("/");
+    }
+
     handleSubmit = async event => {
         event.preventDefault();
 
         const { displayName, email, password, confirmPassword } = this.state;
+
         if (password !== confirmPassword) {
-            alert("Passwords don't match");
-            return false;
+            alert("passwords don't match");
+            return;
         }
 
         try {
-            const user = await auth.createUserWithEmailAndPassword(email, password);
-            await createUserProfileDocument(user, { displayName });
+            const { user } = await auth.createUserWithEmailAndPassword(email, password);
+
+            await createUserProfileDocument(user, {
+                displayName,
+            });
 
             this.setState({
                 displayName: '',
                 email: '',
                 password: '',
                 confirmPassword: '',
+            }, () => {
+              this.handleRedirect();
             });
         } catch (error) {
-            console.log('Error: ' + error.message);
+            console.error(error);
+            alert(error.message);
             throw error;
         }
     };
@@ -49,7 +61,9 @@ class Signup extends React.Component {
     handleChange = event => {
         const { value, name } = event.target;
 
-        this.setState({ [name]: value });
+        this.setState({
+            [name]: value,
+        });
     };
 
     render() {
@@ -57,9 +71,7 @@ class Signup extends React.Component {
 
         return (
             <div className='signup'>
-                <h2>I do not have an account</h2>
-                <span>Sign up with your Email and Password</span>
-
+                <h2> I do not have an account </h2> <span> Sign up with your Email and Password </span>
                 <form onSubmit={this.handleSubmit}>
                     <FormInput
                         name='displayName'
@@ -86,14 +98,13 @@ class Signup extends React.Component {
                         onChange={this.handleChange}
                         required
                     />
-
                     <div className='buttons'>
-                        <CustomButton type='submit'>Sign Up</CustomButton>
-                    </div>
-                </form>
+                        <CustomButton type='submit'> Sign Up </CustomButton>{' '}
+                    </div>{' '}
+                </form>{' '}
             </div>
         );
     }
 }
 
-export default Signup;
+export default withRouter(Signup);
