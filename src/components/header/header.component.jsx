@@ -10,13 +10,12 @@ import './header.styles.scss';
 import { auth } from '../../firebase/firebase.utils';
 
 class Header extends React.Component {
-
     constructor(props) {
         super(props);
 
         this.state = {
             reload: false,
-        }
+        };
     }
 
     onLogout() {
@@ -66,8 +65,6 @@ class Header extends React.Component {
             </div>
         );
     }
-
-
-};
+}
 
 export default Header;

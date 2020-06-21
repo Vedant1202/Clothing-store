@@ -1,7 +1,7 @@
 /** @format */
 
 import React from 'react';
-import { withRouter } from "react-router-dom";
+import { withRouter } from 'react-router-dom';
 
 import './signin.styles.scss';
 import FormInput from '../form-input/form-input.component';
@@ -19,8 +19,8 @@ class Signin extends React.Component {
     }
 
     handleRedirect = () => {
-        this.props.history.push("/");
-    }
+        this.props.history.push('/');
+    };
 
     handleSubmit = async event => {
         event.preventDefault();
@@ -30,7 +30,7 @@ class Signin extends React.Component {
         try {
             await auth.signInWithEmailAndPassword(email, password);
             this.setState({ email: '', password: '' }, () => {
-              this.handleRedirect();
+                this.handleRedirect();
             });
         } catch (error) {
             console.log('Error: ' + error.message);
