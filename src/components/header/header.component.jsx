@@ -10,18 +10,8 @@ import './header.styles.scss';
 import { auth } from '../../firebase/firebase.utils';
 
 class Header extends React.Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            reload: false,
-        };
-    }
-
     onLogout() {
-        this.setState({
-            reload: true,
-        });
+        window.location.reload();
     }
 
     render() {
@@ -51,7 +41,6 @@ class Header extends React.Component {
                             onClick={() => {
                                 auth.signOut();
                                 this.onLogout();
-                                window.location.reload();
                             }}
                         >
                             Sign Out
