@@ -2,6 +2,8 @@
 
 import React from 'react';
 import { Switch, Route } from "react-router-dom";
+import { connect } from 'react-redux';
+import { setCurrentUser, setCurrentUserAuth } from './redux/user/user.actions';
 
 import './App.css';
 
@@ -14,32 +16,24 @@ import SigninRegisterPage from './pages/signin-register/signin-register.componen
 import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
 
 class App extends React.Component {
-    constructor(props) {
-        super(props);
-
-        this.state  = {
-            currentUser: null
-        }
-    }
-
     unsubscribeFromAuth = null;
 
     componentDidMount() {
         this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
-          if (userAuth) {
-            const userRef = await createUserProfileDocument(userAuth);
+            if (userAuth) {
 
-            userRef.onSnapshot(snapShot => {
-              this.setState({
-                currentUser: {
-                  id: snapShot.id,
-                  ...snapShot.data()
-                }
-              });
+                const { setCurrentUser, setCurrentUserAuth } = this.props;
+                const userRef = await createUserProfileDocument(userAuth);
 
-            this.setState({ currentUserAuth: userAuth });
-            });
-          }
+                userRef.onSnapshot(snapShot => {
+                    setCurrentUser({
+                        id: snapShot.id,
+                        ...snapShot.data()
+                    });
+
+                    setCurrentUserAuth(userAuth);
+                });
+            }
 
         });
       }
@@ -49,10 +43,9 @@ class App extends React.Component {
     }
 
     render() {
-        console.log(this.state);
         return (
             <div className='App'>
-                <Header currentUser={this.state.currentUser} currentUserAuth={this.state.currentUserAuth}></Header>
+                <Header></Header>
                 <Switch>
                     <Route exact path='/' component={HomePage}></Route>
                     <Route exact path='/shop' component={ShopPage}></Route>
@@ -64,4 +57,16 @@ class App extends React.Component {
     }
 }
 
-export default App;
+const mapDispatchToProps = (dispatch) => {
+    return {
+        setCurrentUser: (user) => {
+            dispatch(setCurrentUser(user));
+        },
+        setCurrentUserAuth: (userAuth) => {
+            dispatch(setCurrentUserAuth(userAuth));
+        }
+
+    };
+}
+
+export default connect(null, mapDispatchToProps)(App);

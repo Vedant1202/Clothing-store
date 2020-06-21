@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 import { ReactComponent as Logo } from '../../assets/crown.svg';
 
@@ -15,9 +16,8 @@ class Header extends React.Component {
     }
 
     render() {
-        console.log('loaded');
-        console.log(this.props);
         const { currentUser, currentUserAuth } = this.props;
+
         return (
             <div className='header'>
                 <Link className='logo-container' to='/'>
@@ -56,4 +56,11 @@ class Header extends React.Component {
     }
 }
 
-export default Header;
+const mapStateToProps = state => {
+    return {
+        currentUser: state.user.currentUser,
+        currentUserAuth: state.user.currentUserAuth,
+    };
+};
+
+export default connect(mapStateToProps)(Header);
