@@ -1,16 +1,18 @@
+/** @format */
+
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
 
 const config = {
-    apiKey: "AIzaSyC4GHS_fEDd6o8A7JnM4xlHzjCfOa4hwrA",
-    authDomain: "crwn-db-2d76c.firebaseapp.com",
-    databaseURL: "https://crwn-db-2d76c.firebaseio.com",
-    projectId: "crwn-db-2d76c",
-    storageBucket: "crwn-db-2d76c.appspot.com",
-    messagingSenderId: "978100784487",
-    appId: "1:978100784487:web:f6bd910d16ef50f45773c2",
-    measurementId: "G-BQVNGGS9XX"
+    apiKey: 'AIzaSyC4GHS_fEDd6o8A7JnM4xlHzjCfOa4hwrA',
+    authDomain: 'crwn-db-2d76c.firebaseapp.com',
+    databaseURL: 'https://crwn-db-2d76c.firebaseio.com',
+    projectId: 'crwn-db-2d76c',
+    storageBucket: 'crwn-db-2d76c.appspot.com',
+    messagingSenderId: '978100784487',
+    appId: '1:978100784487:web:f6bd910d16ef50f45773c2',
+    measurementId: 'G-BQVNGGS9XX',
 };
 
 export const createUserProfileDocument = async (userAuth, additionalData) => {
@@ -28,7 +30,7 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
         if (userAuth.displayName) {
             displayName = userAuth.displayName;
         } else if (additionalData && additionalData.displayName) {
-            displayName = additionalData.displayName
+            displayName = additionalData.displayName;
         } else {
             displayName = 'User';
         }
@@ -38,7 +40,7 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
                 displayName,
                 email,
                 createdAt,
-                ...additionalData
+                ...additionalData,
             });
         } catch (error) {
             console.log('error creating user', error.message);
@@ -46,7 +48,7 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
     }
 
     return userRef;
-}
+};
 
 firebase.initializeApp(config);
 
@@ -55,14 +57,14 @@ export const firestore = firebase.firestore();
 
 const provider = new firebase.auth.GoogleAuthProvider();
 provider.setCustomParameters({
-    prompt: 'select_account'
+    prompt: 'select_account',
 });
 
-export const signInWithGoogle = async (callback=false) => {
+export const signInWithGoogle = async (callback = false) => {
     await auth.signInWithPopup(provider);
     if (callback) {
         callback();
     }
-}
+};
 
 export default firebase;

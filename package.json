@@ -14,7 +14,8 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
     "redux": "^4.0.5",
-    "redux-logger": "^3.0.6"
+    "redux-logger": "^3.0.6",
+    "reselect": "^4.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -24,7 +25,7 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "prettier": "prettier --check **/*.js, **/*.jsx",
-    "prettier:fix": "prettier --write **/*.js, **/*.jsx *.js *.jsx src/*.js src/*.jsx public/*.js",
+    "prettier:fix": "prettier --write **/*.js, **/*.jsx *.js *.jsx src/*.js src/*.jsx src/**/*.js src/**/*.jsx public/*.js",
     "prettier:fixCss": "prettier --write **/*.scss, **/*.css"
   },
   "eslintConfig": {

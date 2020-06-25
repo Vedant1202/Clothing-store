@@ -1,6 +1,8 @@
-const { default: logger } = require("redux-logger");
-const { createStore, applyMiddleware } = require("redux");
-const { default: rootReducer } = require("./root.reducer");
+/** @format */
+
+const { default: logger } = require('redux-logger');
+const { createStore, applyMiddleware } = require('redux');
+const { default: rootReducer } = require('./root.reducer');
 
 const middlewares = [logger];
 
