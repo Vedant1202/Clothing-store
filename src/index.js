@@ -5,9 +5,6 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
-// store
-// persistor
-
 import './index.css';
 import App from './App';
 import { PersistGate } from 'redux-persist/integration/react';
