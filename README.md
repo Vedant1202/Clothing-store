@@ -1,3 +1,15 @@
+*Note: Some features are still work in progress.*
+
+### To install dependencies
+
+Run
+
+`yarn install`
+
+or
+
+`npm install`
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
