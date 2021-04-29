@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/clothing-store/static/css/main.8b66493c.chunk.css",
-    "main.js": "/clothing-store/static/js/main.1b026ab0.chunk.js",
-    "main.js.map": "/clothing-store/static/js/main.1b026ab0.chunk.js.map",
-    "runtime-main.js": "/clothing-store/static/js/runtime-main.fcdc5460.js",
-    "runtime-main.js.map": "/clothing-store/static/js/runtime-main.fcdc5460.js.map",
-    "static/js/2.e9baea9f.chunk.js": "/clothing-store/static/js/2.e9baea9f.chunk.js",
-    "static/js/2.e9baea9f.chunk.js.map": "/clothing-store/static/js/2.e9baea9f.chunk.js.map",
-    "index.html": "/clothing-store/index.html",
-    "precache-manifest.cb94a303b3797e96cd65e23fb0e9ac82.js": "/clothing-store/precache-manifest.cb94a303b3797e96cd65e23fb0e9ac82.js",
-    "service-worker.js": "/clothing-store/service-worker.js",
-    "static/css/main.8b66493c.chunk.css.map": "/clothing-store/static/css/main.8b66493c.chunk.css.map",
-    "static/js/2.e9baea9f.chunk.js.LICENSE.txt": "/clothing-store/static/js/2.e9baea9f.chunk.js.LICENSE.txt",
-    "static/media/crown.19ef7b17.svg": "/clothing-store/static/media/crown.19ef7b17.svg",
-    "static/media/shopping-bag.30f07071.svg": "/clothing-store/static/media/shopping-bag.30f07071.svg"
+    "main.css": "/Clothing-store/static/css/main.8b66493c.chunk.css",
+    "main.js": "/Clothing-store/static/js/main.1b026ab0.chunk.js",
+    "main.js.map": "/Clothing-store/static/js/main.1b026ab0.chunk.js.map",
+    "runtime-main.js": "/Clothing-store/static/js/runtime-main.ca706bfa.js",
+    "runtime-main.js.map": "/Clothing-store/static/js/runtime-main.ca706bfa.js.map",
+    "static/js/2.e9baea9f.chunk.js": "/Clothing-store/static/js/2.e9baea9f.chunk.js",
+    "static/js/2.e9baea9f.chunk.js.map": "/Clothing-store/static/js/2.e9baea9f.chunk.js.map",
+    "index.html": "/Clothing-store/index.html",
+    "precache-manifest.455708e2f8d2bc20660d042350f18673.js": "/Clothing-store/precache-manifest.455708e2f8d2bc20660d042350f18673.js",
+    "service-worker.js": "/Clothing-store/service-worker.js",
+    "static/css/main.8b66493c.chunk.css.map": "/Clothing-store/static/css/main.8b66493c.chunk.css.map",
+    "static/js/2.e9baea9f.chunk.js.LICENSE.txt": "/Clothing-store/static/js/2.e9baea9f.chunk.js.LICENSE.txt",
+    "static/media/crown.19ef7b17.svg": "/Clothing-store/static/media/crown.19ef7b17.svg",
+    "static/media/shopping-bag.30f07071.svg": "/Clothing-store/static/media/shopping-bag.30f07071.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.fcdc5460.js",
+    "static/js/runtime-main.ca706bfa.js",
     "static/js/2.e9baea9f.chunk.js",
     "static/css/main.8b66493c.chunk.css",
     "static/js/main.1b026ab0.chunk.js"
