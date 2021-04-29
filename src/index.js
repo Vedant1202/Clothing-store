@@ -2,7 +2,7 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, HashRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
 import './index.css';
@@ -13,11 +13,11 @@ import { store, persistor } from './redux/store';
 ReactDOM.render(
     <Provider store={store}>
         <React.StrictMode>
-            <BrowserRouter>
+            <HashRouter basename={'/'}>
                 <PersistGate persistor={persistor}>
                     <App />
                 </PersistGate>
-            </BrowserRouter>
+            </HashRouter>
         </React.StrictMode>
     </Provider>,
     document.getElementById('root')
