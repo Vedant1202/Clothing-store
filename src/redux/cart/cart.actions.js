@@ -29,4 +29,11 @@ const clearItemFromCart = item => {
     };
 };
 
-export { toggleCartDropdown, addItem, removeItem, clearItemFromCart };
+const clearCart = () => {
+    return {
+        type: CartActionTypes.CLEAR_CART,
+        payload: [],
+    };
+};
+
+export { toggleCartDropdown, addItem, removeItem, clearItemFromCart, clearCart };

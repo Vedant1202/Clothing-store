@@ -67,4 +67,24 @@ export const signInWithGoogle = async (callback = false) => {
     }
 };
 
+export const saveOrder = async (cartItems, userId, cartTotal) => {
+    const orderRef = await firestore.collection('orders').add({
+        cartItems,
+        userId,
+        cartTotal,
+    });
+
+    return orderRef;
+}
+
+export const retrieveOrder = async (userId) => {
+    const orderRef = await firestore.collection('orders').where(
+        'userId',
+        '==',
+        userId,
+    ).get();
+
+    return orderRef;
+}
+
 export default firebase;

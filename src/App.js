@@ -18,6 +18,7 @@ import { setCurrentUser, setCurrentUserAuth } from './redux/user/user.actions';
 import { selectCurrentUser, selectCurrentUserAuth } from './redux/user/user.selector';
 
 import './App.css';
+import MyOrdersPage from './pages/myorders/myorders.component';
 
 class App extends React.Component {
     unsubscribeFromAuth = null;
@@ -63,6 +64,7 @@ class App extends React.Component {
                             )
                         }
                     ></Route>
+                    <Route exact path='/myorders' component={MyOrdersPage}></Route>
                     <Route path='*' component={ErrorPage}></Route>
                 </Switch>
             </div>

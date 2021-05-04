@@ -32,8 +32,8 @@ const Header = ({ currentUser, currentUserAuth, cartDropdownHidden }) => {
                 <Link className='option' to='/shop'>
                     Shop
                 </Link>
-                <Link className='option' to='/contact'>
-                    Contact
+                <Link className='option' to='/myorders'>
+                    My Orders
                 </Link>
                 {currentUserAuth ? (
                     <div
