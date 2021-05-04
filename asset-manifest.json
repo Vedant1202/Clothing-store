@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/Clothing-store/static/css/main.8b66493c.chunk.css",
-    "main.js": "/Clothing-store/static/js/main.32decbf8.chunk.js",
-    "main.js.map": "/Clothing-store/static/js/main.32decbf8.chunk.js.map",
+    "main.css": "/Clothing-store/static/css/main.81146b4e.chunk.css",
+    "main.js": "/Clothing-store/static/js/main.506df21d.chunk.js",
+    "main.js.map": "/Clothing-store/static/js/main.506df21d.chunk.js.map",
     "runtime-main.js": "/Clothing-store/static/js/runtime-main.ca706bfa.js",
     "runtime-main.js.map": "/Clothing-store/static/js/runtime-main.ca706bfa.js.map",
-    "static/js/2.dccc4fd8.chunk.js": "/Clothing-store/static/js/2.dccc4fd8.chunk.js",
-    "static/js/2.dccc4fd8.chunk.js.map": "/Clothing-store/static/js/2.dccc4fd8.chunk.js.map",
+    "static/js/2.bf4ccab3.chunk.js": "/Clothing-store/static/js/2.bf4ccab3.chunk.js",
+    "static/js/2.bf4ccab3.chunk.js.map": "/Clothing-store/static/js/2.bf4ccab3.chunk.js.map",
     "index.html": "/Clothing-store/index.html",
-    "precache-manifest.4f65768746cb95edcbb9e64afe4d034f.js": "/Clothing-store/precache-manifest.4f65768746cb95edcbb9e64afe4d034f.js",
+    "precache-manifest.99fabf6157f8c94554d5b116f80cb015.js": "/Clothing-store/precache-manifest.99fabf6157f8c94554d5b116f80cb015.js",
     "service-worker.js": "/Clothing-store/service-worker.js",
-    "static/css/main.8b66493c.chunk.css.map": "/Clothing-store/static/css/main.8b66493c.chunk.css.map",
-    "static/js/2.dccc4fd8.chunk.js.LICENSE.txt": "/Clothing-store/static/js/2.dccc4fd8.chunk.js.LICENSE.txt",
+    "static/css/main.81146b4e.chunk.css.map": "/Clothing-store/static/css/main.81146b4e.chunk.css.map",
+    "static/js/2.bf4ccab3.chunk.js.LICENSE.txt": "/Clothing-store/static/js/2.bf4ccab3.chunk.js.LICENSE.txt",
     "static/media/crown.19ef7b17.svg": "/Clothing-store/static/media/crown.19ef7b17.svg",
     "static/media/shopping-bag.30f07071.svg": "/Clothing-store/static/media/shopping-bag.30f07071.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.ca706bfa.js",
-    "static/js/2.dccc4fd8.chunk.js",
-    "static/css/main.8b66493c.chunk.css",
-    "static/js/main.32decbf8.chunk.js"
+    "static/js/2.bf4ccab3.chunk.js",
+    "static/css/main.81146b4e.chunk.css",
+    "static/js/main.506df21d.chunk.js"
   ]
 }
