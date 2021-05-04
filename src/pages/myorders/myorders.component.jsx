@@ -15,11 +15,11 @@ class MyOrdersPage extends React.Component {
         super(props);
         this.state = {
             orders: [],
-        }
+        };
     }
 
     componentDidMount = async () => {
-        const { currentUser } = this.props
+        const { currentUser } = this.props;
 
         if (currentUser) {
             const orders = [];
@@ -28,23 +28,23 @@ class MyOrdersPage extends React.Component {
                 orders.push(order.data());
             });
 
-            this.setState({
-                orders,
-            }, () => {
-                console.log(this.state);
-            })
+            this.setState(
+                {
+                    orders,
+                },
+                () => {
+                    console.log(this.state);
+                }
+            );
         }
-    }
+    };
 
     getOrdersDomElements = orders => {
         const orderDomElements = [];
-    
+
         orders.forEach((order, i) => {
             orderDomElements.push(
-                <div
-                    className="order-section" 
-                    key={i}
-                >
+                <div className='order-section' key={i}>
                     <h1>Order Number: #{orders.length - i}</h1>
                     <div className='myorders-header'>
                         <div className='header-block'>
@@ -69,18 +69,14 @@ class MyOrdersPage extends React.Component {
         });
 
         return orderDomElements;
-    }
+    };
 
-    render() { 
+    render() {
         const { orders } = this.state;
 
         const orderDomElements = this.getOrdersDomElements(orders);
 
-        return (
-            <div className='myorders-page'>
-                {orderDomElements}
-            </div>
-        );
+        return <div className='myorders-page'>{orderDomElements}</div>;
     }
 }
 

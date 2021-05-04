@@ -14,7 +14,7 @@ const StripeCheckoutButton = ({ price, currentUser, clearCart, cartItems, cartTo
     const publishableKey =
         'pk_test_51GyNCFDmIr6vQapHF389gtwMEgAvxAJkdIh6XAvFthUF9NcJm3AdxMLmFXxZLAH0et8NC7QFrMXUklkCUX9cysoh00oV8PlXmt';
 
-    const onToken = async (token) => {
+    const onToken = async token => {
         console.log(token);
         alert('Payment successful');
         // console.log(currentUser);
@@ -39,13 +39,13 @@ const StripeCheckoutButton = ({ price, currentUser, clearCart, cartItems, cartTo
     );
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
     return {
         clearCart: () => {
             dispatch(clearCart([]));
         },
-    }
-}
+    };
+};
 
 const mapStateToProps = createStructuredSelector({
     currentUser: selectCurrentUser,

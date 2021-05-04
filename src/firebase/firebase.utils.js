@@ -75,16 +75,15 @@ export const saveOrder = async (cartItems, userId, cartTotal) => {
     });
 
     return orderRef;
-}
+};
 
-export const retrieveOrder = async (userId) => {
-    const orderRef = await firestore.collection('orders').where(
-        'userId',
-        '==',
-        userId,
-    ).get();
+export const retrieveOrder = async userId => {
+    const orderRef = await firestore
+        .collection('orders')
+        .where('userId', '==', userId)
+        .get();
 
     return orderRef;
-}
+};
 
 export default firebase;
