@@ -52,7 +52,17 @@ class App extends React.Component {
                 <Switch>
                     <Route exact path='/' component={HomePage}></Route>
                     <Route path='/shop' component={ShopPage}></Route>
-                    <Route exact path='/checkout' component={CheckoutPage}></Route>
+                    <Route
+                        exact
+                        path='/checkout'
+                        render={() =>
+                            this.props.currentUser && this.props.currentUserAuth ? (
+                                <CheckoutPage></CheckoutPage>
+                            ) : (
+                                <SigninRegisterPage></SigninRegisterPage>
+                            )
+                        }
+                    ></Route>
                     <Route
                         exact
                         path='/join'
