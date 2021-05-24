@@ -1,4 +1,14 @@
 *Note: Some features are still work in progress.*
+# Clothing Store
+
+
+## Demo
+
+- Demo App at [Clothing Store](https://vedant1202.github.io/Clothing-store/#/).
+- Sample Login Credentials:
+  - Email: sampleuser@mail.com
+  - Password: password1
+
 
 ### To install dependencies
 
