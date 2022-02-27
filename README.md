@@ -1,6 +1,8 @@
 *Note: Some features are still work in progress.*
 # Clothing Store
 
+An ecommerce website for a fashion store.
+
 
 ## Demo
 
